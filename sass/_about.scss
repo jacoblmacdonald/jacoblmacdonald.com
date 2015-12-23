@@ -1,0 +1,54 @@
+#about {
+	background-color: $black;
+	color: $white;
+
+	.container {
+		height: calc(100% - 90px);
+		margin-top: 90px;
+		position: relative;
+
+		.image {
+			width: 40%;
+			height: 100%;
+			float: left;
+			position: relative;
+
+			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 60%;
+				transform: translate(-50%, -50%);
+				border-radius: 100%;
+			}
+		}
+
+		.info {
+			width: 52%;
+			height: 100%;
+			float: left;
+			position: relative;
+
+			.wrapper {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				line-height: 1.4rem;
+
+				.header {
+					font-size: 2rem;
+					text-align: center;
+				}
+
+				.experience {
+					text-align: center;
+					margin-bottom: 60px;
+				}
+
+				.skills {
+					text-align: center;
+				}
+			}
+		}
+	}
+}

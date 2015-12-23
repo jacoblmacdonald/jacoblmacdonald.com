@@ -1,0 +1,65 @@
+@mixin media($breakpoint) {
+	@if $breakpoint == 1 {
+		@media screen and (max-width: 1000px) {
+			@content;
+		}
+	}	
+	@else if $breakpoint == 2 {
+		@media screen and (max-width: 900px) {
+			@content;
+		}
+	}
+	@else if $breakpoint == 3 {
+		@media screen and (max-width: 777px) {
+			@content;
+		}
+	}
+	@else if $breakpoint == 4 {
+		@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2), //iPhone 4/4s
+			   screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2), //iPhone 5/5s
+			   screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2), //iPhone 6
+			   screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3), //iPhone 6+
+			   screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2),			//Galaxy S3
+			   screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3),			//Galaxy S4
+			   screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3),			//Galaxy S5
+			   screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3)	{			//HTC One
+			@content;
+		}
+	}
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} { @content; }
+	@-moz-keyframes #{$name} { @content; }
+	@-ms-keyframes #{$name} { @content; }
+	@keyframes #{$name} { @content; }
+}
+
+* {
+	margin: 0;
+}
+
+html {
+	font-size: 16px;
+}
+
+p, label, input, textarea {
+	font-family: "Menlo";
+}
+
+input, textarea {
+	border: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+textarea {
+	resize: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}

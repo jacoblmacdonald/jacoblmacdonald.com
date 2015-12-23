@@ -1,0 +1,139 @@
+#contact {
+	background-color: $black;
+	color: $white;
+
+	#email-form {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+
+		.form-row {
+			width: 50vw;
+			min-height: 30px;
+			margin-bottom: 10px;
+
+			label {
+				display: inline-block;
+				width: 150px;
+				height: 100%;
+				vertical-align: top;
+			}
+
+			input, textarea {
+				position: relative;
+				right: 0;
+				width: calc(100% - 170px);
+				background-color: $black;
+				color: $white;
+				vertical-align: top;
+			}
+
+			input {
+				border-bottom: 1px solid $white;
+
+				&#email {
+					width: calc(50% - 60px);
+				}
+			}
+
+			textarea {
+				border: 1px solid $white;
+			}
+		}
+
+		.confirm {
+			text-align: right;
+			margin: 20px 10px 0 0;
+			cursor: pointer;
+
+			span {
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			.contact-icon {
+				width: 50px;
+				height: 25px;
+
+				svg {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					top: -2px;
+
+					* {
+						fill: $white;
+					}
+				}
+			}
+		}
+
+		.spinner {
+			height: 32px;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+			
+			span {
+				display: inline-block;
+				border: 0px solid $white;
+				border-radius: 50%;
+				margin: 16px 0;
+				position: relative;
+				-webkit-animation: bubble 1.25s infinite;
+				animation: bubble 1.25s infinite;
+
+				@include keyframes(bubble) {
+					to {
+						top: 0;
+						opacity: 0;
+						border-width: 16px;
+					}
+					from {
+						top: 16px;
+						opacity: 0.75;
+						border-width: 0;
+					}
+				}
+			}
+
+			&.active {
+				opacity: 1;
+			}
+		}
+
+		#email-form-failure {
+			height: 32px;
+			margin-bottom: 30px;
+			color: $red;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+
+			a {
+				color: $white;
+			}
+
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+
+	#email-form-success {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		color: $white;
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+
+		&.active {
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,821 @@
+/* line 38, ../sass/_boilerplate.scss */
+* {
+  margin: 0;
+}
+
+/* line 42, ../sass/_boilerplate.scss */
+html {
+  font-size: 16px;
+}
+
+/* line 46, ../sass/_boilerplate.scss */
+p, label, input, textarea {
+  font-family: "Menlo";
+}
+
+/* line 50, ../sass/_boilerplate.scss */
+input, textarea {
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 58, ../sass/_boilerplate.scss */
+textarea {
+  resize: none;
+}
+
+/* line 62, ../sass/_boilerplate.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 1, ../sass/_global.scss */
+body {
+  background-color: #E6E6E6;
+  overflow: hidden;
+}
+
+/* line 7, ../sass/_global.scss */
+.panel {
+  position: fixed;
+  top: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: top 0.5s ease-in-out;
+}
+/* line 16, ../sass/_global.scss */
+.panel[data-page="0"] {
+  z-index: 0;
+}
+/* line 16, ../sass/_global.scss */
+.panel[data-page="1"] {
+  z-index: 1;
+}
+/* line 16, ../sass/_global.scss */
+.panel[data-page="2"] {
+  z-index: 2;
+}
+/* line 16, ../sass/_global.scss */
+.panel[data-page="3"] {
+  z-index: 3;
+}
+/* line 16, ../sass/_global.scss */
+.panel[data-page="4"] {
+  z-index: 4;
+}
+/* line 21, ../sass/_global.scss */
+.panel.top {
+  top: 0;
+}
+
+/* line 26, ../sass/_global.scss */
+.arrow {
+  position: fixed;
+  left: 50%;
+  bottom: -10px;
+  -webkit-transform: scale(-1) translateX(50%);
+  transform: scale(-1) translateX(50%);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+  -webkit-animation: bob 1.25s infinite ease-in-out;
+  animation: bob 1.25s infinite ease-in-out;
+  cursor: pointer;
+}
+/* line 44, ../sass/_global.scss */
+.arrow span {
+  position: relative;
+  bottom: 0;
+}
+/* line 49, ../sass/_global.scss */
+.arrow.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+@-webkit-keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@-moz-keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@-ms-keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+/* line 1, ../sass/_header.scss */
+#header {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 40px);
+  height: 50px;
+  padding: 20px;
+  background-color: #E6E6E6;
+  z-index: 101;
+}
+/* line 10, ../sass/_header.scss */
+#header .logo {
+  font-size: 2rem;
+  line-height: 50px;
+  color: #272822;
+}
+/* line 15, ../sass/_header.scss */
+#header .logo span {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 19, ../sass/_header.scss */
+#header .logo span.logo-expand {
+  width: 20px;
+  overflow: hidden;
+}
+/* line 26, ../sass/_header.scss */
+#header .header-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in-out;
+}
+/* line 36, ../sass/_header.scss */
+#header .header-items p {
+  display: inline-block;
+  color: #272822;
+  line-height: 90px;
+  margin: 0 20px;
+  font-size: 1.25rem;
+}
+/* line 43, ../sass/_header.scss */
+#header .header-items p .page-select {
+  cursor: pointer;
+}
+/* line 46, ../sass/_header.scss */
+#header .header-items p .page-select:hover + .page-select-border {
+  width: 100%;
+}
+/* line 51, ../sass/_header.scss */
+#header .header-items p .page-select-border {
+  display: block;
+  width: 0;
+  height: 1px;
+  position: relative;
+  top: -25px;
+  background-color: #272822;
+  transition: width 0.25s ease-in-out, height 0.25s;
+}
+/* line 60, ../sass/_header.scss */
+#header .header-items p .page-select-border.active {
+  width: 100%;
+  height: 3px !important;
+}
+/* line 67, ../sass/_header.scss */
+#header .header-items.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* line 73, ../sass/_header.scss */
+#header.border {
+  border-bottom: 3px solid #272822;
+}
+
+/* line 78, ../sass/_header.scss */
+#bracket {
+  position: fixed;
+  top: calc(100% - 70px);
+  right: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  line-height: 50px;
+  z-index: 102;
+  transition: top 0.25s ease-in-out;
+}
+/* line 89, ../sass/_header.scss */
+#bracket.top {
+  top: 20px;
+}
+
+/* line 1, ../sass/_intro.scss */
+#intro {
+  background-color: #E6E6E6;
+}
+/* line 4, ../sass/_intro.scss */
+#intro .tagline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 12, ../sass/_intro.scss */
+#intro .arrow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  -webkit-transform: scale(-1) translateX(50%);
+  transform: scale(-1) translateX(50%);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  -webkit-animation: bob 1.25s infinite ease-in-out;
+  animation: bob 1.25s infinite ease-in-out;
+}
+/* line 28, ../sass/_intro.scss */
+#intro .arrow span {
+  position: relative;
+  bottom: 0;
+}
+/* line 33, ../sass/_intro.scss */
+#intro .arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/* line 38, ../sass/_intro.scss */
+#intro .arrow:hover {
+  cursor: pointer;
+}
+@-webkit-keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@-moz-keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@-ms-keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@keyframes bob {
+  0% {
+    bottom: -10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+/* line 1, ../sass/_about.scss */
+#about {
+  background-color: #272822;
+  color: #E6E6E6;
+}
+/* line 5, ../sass/_about.scss */
+#about .container {
+  height: calc(100% - 90px);
+  margin-top: 90px;
+  position: relative;
+}
+/* line 10, ../sass/_about.scss */
+#about .container .image {
+  width: 40%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+/* line 16, ../sass/_about.scss */
+#about .container .image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
+/* line 26, ../sass/_about.scss */
+#about .container .info {
+  width: 52%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+/* line 32, ../sass/_about.scss */
+#about .container .info .wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1.4rem;
+}
+/* line 38, ../sass/_about.scss */
+#about .container .info .wrapper .header {
+  font-size: 2rem;
+  text-align: center;
+}
+/* line 43, ../sass/_about.scss */
+#about .container .info .wrapper .experience {
+  text-align: center;
+  margin-bottom: 60px;
+}
+/* line 48, ../sass/_about.scss */
+#about .container .info .wrapper .skills {
+  text-align: center;
+}
+
+/* line 1, ../sass/_projects.scss */
+#projects {
+  background-color: transparent;
+  color: #272822;
+}
+/* line 5, ../sass/_projects.scss */
+#projects .project-list {
+  height: calc(100% - 90px);
+  margin-top: 90px;
+  background-color: #272822;
+  font-size: 0;
+}
+/* line 11, ../sass/_projects.scss */
+#projects .project-list .project-panel {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  font-size: 1rem;
+  vertical-align: top;
+  position: relative;
+  left: 0;
+  transition: left 0.5s ease-in-out;
+}
+/* line 21, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #E6E6E6;
+  z-index: 2;
+  transition: top 0.5s ease-in-out;
+}
+/* line 31, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select .logo-wrapper {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  background-color: #272822;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  border-radius: 100%;
+}
+/* line 43, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select .logo-wrapper svg, #projects .project-list .project-panel .project-select .logo-wrapper img {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0.5;
+}
+/* line 49, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select .logo-wrapper svg {
+  width: 80%;
+  height: 100%;
+}
+/* line 54, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select .logo-wrapper img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80%;
+}
+/* line 64, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select .logo-wrapper:hover {
+  width: 275px;
+  height: 275px;
+}
+/* line 68, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select .logo-wrapper:hover svg {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 1;
+}
+/* line 74, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select .logo-wrapper:hover img {
+  -webkit-transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+}
+/* line 82, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select.top .logo-wrapper {
+  bottom: 20px;
+}
+/* line 86, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select.bottom .logo-wrapper {
+  top: 20px;
+}
+/* line 90, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select.left .logo-wrapper {
+  right: 20px;
+}
+/* line 94, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select.right .logo-wrapper {
+  left: 20px;
+}
+/* line 100, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select.active.top {
+  top: calc(-50% - 90px);
+}
+/* line 104, ../sass/_projects.scss */
+#projects .project-list .project-panel .project-select.active.bottom {
+  top: calc(50% + 90px);
+}
+/* line 112, ../sass/_projects.scss */
+#projects .project-list .project-panel.active.left {
+  left: -50%;
+}
+/* line 116, ../sass/_projects.scss */
+#projects .project-list .project-panel.active.right {
+  left: 50%;
+}
+/* line 122, ../sass/_projects.scss */
+#projects .project-list .project {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 40px);
+  height: 100%;
+  margin: 110px 20px 20px;
+  z-index: -1;
+  background-color: #272822;
+  color: #E6E6E6;
+  font-size: 0;
+}
+/* line 134, ../sass/_projects.scss */
+#projects .project-list .project .logo {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+}
+/* line 140, ../sass/_projects.scss */
+#projects .project-list .project .logo .wrapper {
+  height: 100px;
+  display: inline-block;
+}
+/* line 144, ../sass/_projects.scss */
+#projects .project-list .project .logo .wrapper svg, #projects .project-list .project .logo .wrapper img {
+  height: 100%;
+}
+/* line 149, ../sass/_projects.scss */
+#projects .project-list .project .logo .close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+/* line 158, ../sass/_projects.scss */
+#projects .project-list .project .logo .close span {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+/* line 163, ../sass/_projects.scss */
+#projects .project-list .project .logo .close span:before, #projects .project-list .project .logo .close span:after {
+  content: "";
+  display: block;
+  position: relative;
+  left: -50%;
+  width: 50px;
+  height: 1px;
+  background-color: #E6E6E6;
+  transition: width 0.5s;
+}
+/* line 174, ../sass/_projects.scss */
+#projects .project-list .project .logo .close span:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 179, ../sass/_projects.scss */
+#projects .project-list .project .logo .close span:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* line 187, ../sass/_projects.scss */
+#projects .project-list .project .logo .close:hover span:before, #projects .project-list .project .logo .close:hover span:after {
+  width: 65px;
+}
+/* line 194, ../sass/_projects.scss */
+#projects .project-list .project .info, #projects .project-list .project .image {
+  width: calc(50% - 20px);
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1rem;
+}
+/* line 201, ../sass/_projects.scss */
+#projects .project-list .project .info {
+  margin-right: 20px;
+  line-height: 1.4rem;
+}
+/* line 206, ../sass/_projects.scss */
+#projects .project-list .project .image {
+  margin-left: 20px;
+}
+/* line 209, ../sass/_projects.scss */
+#projects .project-list .project .image .images {
+  width: 100%;
+  height: calc(100vh - 310px);
+  position: relative;
+}
+/* line 214, ../sass/_projects.scss */
+#projects .project-list .project .image .images img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+/* line 223, ../sass/_projects.scss */
+#projects .project-list .project .image .images img.active {
+  opacity: 1;
+}
+/* line 229, ../sass/_projects.scss */
+#projects .project-list .project .image .designed-by {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 233, ../sass/_projects.scss */
+#projects .project-list .project .image .designed-by a {
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+}
+/* line 238, ../sass/_projects.scss */
+#projects .project-list .project .image .designed-by a .red {
+  color: #F92772;
+}
+/* line 242, ../sass/_projects.scss */
+#projects .project-list .project .image .designed-by a .white {
+  color: #E6E6E6;
+}
+/* line 248, ../sass/_projects.scss */
+#projects .project-list .project .image .designed-by a:hover * {
+  color: #E6E6E6;
+}
+/* line 252, ../sass/_projects.scss */
+#projects .project-list .project .image .designed-by a:hover .red {
+  background-color: #F92772;
+}
+/* line 256, ../sass/_projects.scss */
+#projects .project-list .project .image .designed-by a:hover .white {
+  background-color: #E6E6E6;
+  color: #272822;
+}
+/* line 265, ../sass/_projects.scss */
+#projects .project-list .project.active {
+  z-index: 1;
+}
+
+/* line 1, ../sass/_contact.scss */
+#contact {
+  background-color: #272822;
+  color: #E6E6E6;
+}
+/* line 5, ../sass/_contact.scss */
+#contact #email-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 12, ../sass/_contact.scss */
+#contact #email-form .form-row {
+  width: 50vw;
+  min-height: 30px;
+  margin-bottom: 10px;
+}
+/* line 17, ../sass/_contact.scss */
+#contact #email-form .form-row label {
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+  vertical-align: top;
+}
+/* line 24, ../sass/_contact.scss */
+#contact #email-form .form-row input, #contact #email-form .form-row textarea {
+  position: relative;
+  right: 0;
+  width: calc(100% - 170px);
+  background-color: #272822;
+  color: #E6E6E6;
+  vertical-align: top;
+}
+/* line 33, ../sass/_contact.scss */
+#contact #email-form .form-row input {
+  border-bottom: 1px solid #E6E6E6;
+}
+/* line 36, ../sass/_contact.scss */
+#contact #email-form .form-row input#email {
+  width: calc(50% - 60px);
+}
+/* line 41, ../sass/_contact.scss */
+#contact #email-form .form-row textarea {
+  border: 1px solid #E6E6E6;
+}
+/* line 46, ../sass/_contact.scss */
+#contact #email-form .confirm {
+  text-align: right;
+  margin: 20px 10px 0 0;
+  cursor: pointer;
+}
+/* line 51, ../sass/_contact.scss */
+#contact #email-form .confirm span {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 56, ../sass/_contact.scss */
+#contact #email-form .confirm .contact-icon {
+  width: 50px;
+  height: 25px;
+}
+/* line 60, ../sass/_contact.scss */
+#contact #email-form .confirm .contact-icon svg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -2px;
+}
+/* line 66, ../sass/_contact.scss */
+#contact #email-form .confirm .contact-icon svg * {
+  fill: #E6E6E6;
+}
+/* line 73, ../sass/_contact.scss */
+#contact #email-form .spinner {
+  height: 32px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/* line 79, ../sass/_contact.scss */
+#contact #email-form .spinner span {
+  display: inline-block;
+  border: 0px solid #E6E6E6;
+  border-radius: 50%;
+  margin: 16px 0;
+  position: relative;
+  -webkit-animation: bubble 1.25s infinite;
+  animation: bubble 1.25s infinite;
+}
+@-webkit-keyframes bubble {
+  to {
+    top: 0;
+    opacity: 0;
+    border-width: 16px;
+  }
+  from {
+    top: 16px;
+    opacity: 0.75;
+    border-width: 0;
+  }
+}
+@-moz-keyframes bubble {
+  to {
+    top: 0;
+    opacity: 0;
+    border-width: 16px;
+  }
+  from {
+    top: 16px;
+    opacity: 0.75;
+    border-width: 0;
+  }
+}
+@-ms-keyframes bubble {
+  to {
+    top: 0;
+    opacity: 0;
+    border-width: 16px;
+  }
+  from {
+    top: 16px;
+    opacity: 0.75;
+    border-width: 0;
+  }
+}
+@keyframes bubble {
+  to {
+    top: 0;
+    opacity: 0;
+    border-width: 16px;
+  }
+  from {
+    top: 16px;
+    opacity: 0.75;
+    border-width: 0;
+  }
+}
+/* line 102, ../sass/_contact.scss */
+#contact #email-form .spinner.active {
+  opacity: 1;
+}
+/* line 107, ../sass/_contact.scss */
+#contact #email-form #email-form-failure {
+  height: 32px;
+  margin-bottom: 30px;
+  color: #F92772;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/* line 115, ../sass/_contact.scss */
+#contact #email-form #email-form-failure a {
+  color: #E6E6E6;
+}
+/* line 119, ../sass/_contact.scss */
+#contact #email-form #email-form-failure.active {
+  opacity: 1;
+}
+/* line 125, ../sass/_contact.scss */
+#contact #email-form-success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #E6E6E6;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/* line 135, ../sass/_contact.scss */
+#contact #email-form-success.active {
+  opacity: 1;
+}
