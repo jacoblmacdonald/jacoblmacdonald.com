@@ -43,8 +43,13 @@ html {
 	font-size: 16px;
 }
 
-p, label, input, textarea {
-	font-family: "Menlo";
+p, label {
+	font-family: "Menlo", "Lucida Console", monospace;
+	//font-family: "museo-nova";
+}
+
+section, input, textarea {
+	font-family: "inconsolata";
 }
 
 input, textarea {
@@ -62,4 +67,15 @@ textarea {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+.mobile {
+	display: none !important;
+}
+
+@include media(4) {
+	
+	.desktop {
+		display: none !important;
+	}
 }

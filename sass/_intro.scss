@@ -20,7 +20,6 @@
 		text-align: center;
 		line-height: 100px;
 		z-index: 1;
-		opacity: 1;
 		transition: opacity 0.5s ease-in-out;
 		-webkit-animation: bob 1.25s infinite ease-in-out;
 		animation: bob 1.25s infinite ease-in-out;
@@ -28,11 +27,6 @@
 		span {
 			position: relative;
 			bottom: 0;
-		}
-
-		&.hidden {
-			opacity: 0;
-			pointer-events: none;
 		}
 
 		&:hover {
@@ -49,6 +43,15 @@
 			100% {
 				bottom: -10px;
 			}
+		}
+	}
+
+	@include media(4) {
+		height: 100vh;
+		position: relative;
+
+		.tagline {
+			font-size: 2.4rem;
 		}
 	}
 }

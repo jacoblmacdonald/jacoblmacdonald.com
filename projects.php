@@ -29,12 +29,12 @@
 				<span class="close"><span></span></span>
 			</div>
 			<div class="info">
-				<p>
+				<section>
 					<?= $project->description; ?>
 					<br>
 					<br>
 					<a href="<?= $project->link; ?>" target="_blank">Visit <span style="color:<?= $project->color; ?>;"><?= str_replace("//", "", $project->link); ?></span> --></a>
-				</p>
+				</section>
 			</div>
 			<div class="image">
 				<a href="<?= $project->link; ?>" target="_blank">
@@ -46,9 +46,7 @@
 				</a>
 				<p class="designed-by">
 					<a href="<?= $project->designer_link; ?>" target="_blank">
-						Designed by <span class="<?= $project->designer_color; ?>">
-							<?= $project->designer; ?>
-						</span>
+						Designed by <span class="<?= $project->designer_color; ?>"><?= $project->designer; ?></span>
 					</a>
 				</p>
 			</div>

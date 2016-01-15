@@ -234,6 +234,7 @@
 						display: inline-block;
 						float: right;
 						margin-top: 20px;
+						font-weight: 600;
 
 						.red {
 							color: $red;
@@ -264,6 +265,16 @@
 
 			&.active {
 				z-index: 1;
+			}
+		}
+	}
+
+	@include media(4) {
+		
+		.project-list {
+
+			.project {
+				display: none;
 			}
 		}
 	}

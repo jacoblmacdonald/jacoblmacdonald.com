@@ -28,6 +28,7 @@
 			height: 100%;
 			float: left;
 			position: relative;
+			text-align: left;
 
 			.wrapper {
 				position: absolute;
@@ -37,16 +38,59 @@
 
 				.header {
 					font-size: 2rem;
-					text-align: center;
+					font-weight: 600;
 				}
 
 				.experience {
-					text-align: center;
 					margin-bottom: 60px;
 				}
+			}
+		}
+	}
 
-				.skills {
-					text-align: center;
+	@include media(4) {
+
+		.container {
+			height: auto;
+			margin: 150px 0 150px;
+
+			.image, .info {
+				width: 100%;
+				height: auto;
+				float: none;
+			}
+
+			.image {
+				text-align: center;
+				margin-bottom: 150px;
+
+				img {
+					position: static;
+					transform: none;
+				}
+			}
+
+			.info {
+				width: 80%;
+				margin-left: 10%;
+				text-align: right;
+
+				.wrapper {
+					position: static;
+					transform: none;
+					line-height: 3.2rem;
+
+					.header {
+						font-size: 3.6rem;
+					}
+
+					.experience, .skills {
+						font-size: 1.2rem;
+					}
+
+					.experience .sub-header {
+						font-size: 2.4rem;
+					}
 				}
 			}
 		}
