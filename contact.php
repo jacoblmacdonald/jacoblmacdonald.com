@@ -1,3 +1,4 @@
+<?php $color = "white"; include("background-text.php"); ?>
 <p class="contact-header mobile">Contact</p>
 <form id="email-form" class="desktop">
 	<p class="spinner"><span></span></p>

@@ -1,22 +1,23 @@
-<?php include("content.php"); ?>
+<?php include("content.php"); $color = "black"; include("background-text.php"); ?>
 <div class="project-list">
-	<div class="project-panel">
-		<?php for($i = 0; $i < 2; $i++) { ?>
-			<div class="project-select left <?= $i == 0 ? 'top' : 'bottom'; ?>" data-index=<?= $i; ?>>
-				<div class="logo-wrapper">
-					<?php echo $projects[$i]->get_logo(); ?>
-				</div>
+	<p class="project-header mobile">Projects<span>Click to visit site</span></p>
+	<div class="project-panel-outer top">
+		<div class="project-panel-inner">
+		<?php for($i = 0; $i < ceil(count($projects) / 2); $i++) { ?>
+			<div class="logo-wrapper" data-index=<?= $i; ?> data-url=<?= $projects[$i]->link; ?>>
+				<?php echo $projects[$i]->get_logo(); ?>
 			</div>
 		<?php } ?>
+		</div>
 	</div>
-	<div class="project-panel">
-		<?php for($i = 2; $i < 4; $i++) { ?>
-			<div class="project-select right <?= $i == 2 ? 'top' : 'bottom'; ?>" data-index=<?= $i; ?>>
-				<div class="logo-wrapper">
-					<?php echo $projects[$i]->get_logo(); ?>
-				</div>
+	<div class="project-panel-outer bottom">
+		<div class="project-panel-inner">
+		<?php for($i = ceil(count($projects) / 2); $i < count($projects); $i++) { ?>
+			<div class="logo-wrapper" data-index=<?= $i; ?> data-url=<?= $projects[$i]->link; ?>>
+				<?php echo $projects[$i]->get_logo(); ?>
 			</div>
 		<?php } ?>
+		</div>
 	</div>
 	<?php $i = 0; foreach($projects as $project) { ?>
 		<div class="project p<?= $i; ?>">

@@ -37,9 +37,9 @@ if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 			$(this).css("background", "url(" + $(this).data("src") + ") no-repeat -9999px -9999px");
 		});
 
-		$(".project-select .logo-wrapper").click(function() {
-			$(".project-select").addClass("active");
-			$(".project").removeClass("active").filter(".p" + $(this).parent().data("index")).addClass("active");
+		$(".project-panel-outer .logo-wrapper").click(function() {
+			$(".project-panel-outer").addClass("active");
+			$(".project").removeClass("active").filter(".p" + $(this).data("index")).addClass("active");
 			$el = $(".project.active .images");
 			$el.addClass("active");
 			if(!$el.hasClass("loaded")) {
@@ -52,7 +52,7 @@ if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 		});
 
 		$(".project .close").click(function() {
-			$(".project-select").removeClass("active");
+			$(".project-panel-outer").removeClass("active");
 			$(".project .images").removeClass("active");
 		});
 
@@ -181,8 +181,13 @@ else {
 			goToAnchor($(".page-select", this).data("page"));
 		});
 
-		//Intro
+		//Intro page
 		$("#intro").height($(window).height());
+
+		//Projects page
+		$(".logo-wrapper").click(function() {
+			window.open($(this).data("url"), "_blank");
+		});
 	});
 
 	var contractLogo = function() {

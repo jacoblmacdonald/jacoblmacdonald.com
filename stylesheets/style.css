@@ -89,6 +89,37 @@ body {
   top: 0;
 }
 
+/* line 26, ../sass/_global.scss */
+.background-text {
+  position: absolute;
+  opacity: 0.07;
+  margin: 190px 100px 100px;
+  width: calc(50% - 120px);
+  height: calc(100% - 290px);
+  overflow: hidden;
+  color: #272822;
+  font-size: 1rem;
+  z-index: 100;
+  pointer-events: none;
+}
+/* line 38, ../sass/_global.scss */
+.background-text.b0 {
+  margin-right: 20px;
+}
+/* line 42, ../sass/_global.scss */
+.background-text.b1 {
+  margin-left: 20px;
+  left: 50%;
+}
+/* line 47, ../sass/_global.scss */
+.background-text.black {
+  color: #272822;
+}
+/* line 51, ../sass/_global.scss */
+.background-text.white {
+  color: #E6E6E6;
+}
+
 /* line 1, ../sass/_header.scss */
 #header {
   position: fixed;
@@ -157,17 +188,43 @@ body {
   width: 100%;
   height: 3px !important;
 }
-/* line 67, ../sass/_header.scss */
+/* line 66, ../sass/_header.scss */
+#header .header-items p svg {
+  position: relative;
+  top: 17px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+/* line 73, ../sass/_header.scss */
+#header .header-items p svg *:not(circle) {
+  fill: #272822;
+  transition: fill 0.1s ease-in-out;
+}
+/* line 78, ../sass/_header.scss */
+#header .header-items p svg circle {
+  fill: #E6E6E6;
+  transition: fill 0.1s ease-in-out;
+}
+/* line 85, ../sass/_header.scss */
+#header .header-items p svg:hover *:not(circle) {
+  fill: #E6E6E6;
+}
+/* line 89, ../sass/_header.scss */
+#header .header-items p svg:hover circle {
+  fill: #272822;
+}
+/* line 96, ../sass/_header.scss */
 #header .header-items.active {
   opacity: 1;
   pointer-events: auto;
 }
-/* line 73, ../sass/_header.scss */
+/* line 102, ../sass/_header.scss */
 #header.border {
   border-bottom: 3px solid #272822;
 }
 
-/* line 78, ../sass/_header.scss */
+/* line 107, ../sass/_header.scss */
 #bracket {
   position: fixed;
   top: calc(100% - 70px);
@@ -179,7 +236,7 @@ body {
   z-index: 102;
   transition: top 0.25s ease-in-out;
 }
-/* line 89, ../sass/_header.scss */
+/* line 118, ../sass/_header.scss */
 #bracket.top {
   top: 20px;
 }
@@ -389,33 +446,34 @@ body {
   font-size: 0;
 }
 /* line 11, ../sass/_projects.scss */
-#projects .project-list .project-panel {
+#projects .project-list .project-panel-outer {
   display: inline-block;
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: 50%;
   font-size: 1rem;
   vertical-align: top;
   position: relative;
-  left: 0;
-  transition: left 0.5s ease-in-out;
-}
-/* line 21, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select {
-  width: 100%;
-  height: 50%;
-  position: relative;
   top: 0;
-  left: 0;
   background-color: #E6E6E6;
   z-index: 2;
   transition: top 0.5s ease-in-out;
 }
-/* line 31, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select .logo-wrapper {
+/* line 23, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner {
+  display: inline-block;
   position: absolute;
-  right: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  background-color: #E6E6E6;
+}
+/* line 31, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper {
+  display: inline-block;
+  position: relative;
   width: 200px;
   height: 200px;
+  margin: 20px;
   text-align: center;
   background-color: #272822;
   overflow: hidden;
@@ -423,19 +481,19 @@ body {
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   border-radius: 100%;
 }
-/* line 43, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select .logo-wrapper svg, #projects .project-list .project-panel .project-select .logo-wrapper img {
+/* line 44, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper svg, #projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper img {
   -webkit-transition: -webkit-transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0.5;
 }
-/* line 49, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select .logo-wrapper svg {
+/* line 50, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper svg {
   width: 80%;
   height: 100%;
 }
-/* line 54, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select .logo-wrapper img {
+/* line 55, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper img {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -444,56 +502,44 @@ body {
   max-width: 80%;
   max-height: 80%;
 }
-/* line 64, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select .logo-wrapper:hover {
+/* line 65, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper:hover {
   width: 275px;
   height: 275px;
 }
-/* line 68, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select .logo-wrapper:hover svg {
+/* line 69, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper:hover svg {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 1;
 }
-/* line 74, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select .logo-wrapper:hover img {
+/* line 75, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper:hover img {
   -webkit-transform: translate(-50%, -50%) scale(1.1);
   transform: translate(-50%, -50%) scale(1.1);
   opacity: 1;
 }
-/* line 82, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select.top .logo-wrapper {
-  bottom: 20px;
+/* line 84, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer.top .project-panel-inner {
+  bottom: 0;
 }
-/* line 86, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select.bottom .logo-wrapper {
-  top: 20px;
+/* line 88, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer.bottom .project-panel-inner {
+  top: 0;
 }
-/* line 90, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select.left .logo-wrapper {
-  right: 20px;
+/* line 91, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer.bottom .project-panel-inner .logo-wrapper {
+  vertical-align: top;
 }
-/* line 94, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select.right .logo-wrapper {
-  left: 20px;
+/* line 98, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer.active.top {
+  top: -100%;
 }
-/* line 100, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select.active.top {
-  top: calc(-50% - 90px);
+/* line 102, ../sass/_projects.scss */
+#projects .project-list .project-panel-outer.active.bottom {
+  top: 100%;
 }
-/* line 104, ../sass/_projects.scss */
-#projects .project-list .project-panel .project-select.active.bottom {
-  top: calc(50% + 90px);
-}
-/* line 112, ../sass/_projects.scss */
-#projects .project-list .project-panel.active.left {
-  left: -50%;
-}
-/* line 116, ../sass/_projects.scss */
-#projects .project-list .project-panel.active.right {
-  left: 50%;
-}
-/* line 122, ../sass/_projects.scss */
+/* line 108, ../sass/_projects.scss */
 #projects .project-list .project {
   position: absolute;
   top: 0;
@@ -506,23 +552,23 @@ body {
   color: #E6E6E6;
   font-size: 0;
 }
-/* line 134, ../sass/_projects.scss */
+/* line 120, ../sass/_projects.scss */
 #projects .project-list .project .logo {
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #E6E6E6;
   position: relative;
 }
-/* line 140, ../sass/_projects.scss */
+/* line 126, ../sass/_projects.scss */
 #projects .project-list .project .logo .wrapper {
   height: 100px;
   display: inline-block;
 }
-/* line 144, ../sass/_projects.scss */
+/* line 130, ../sass/_projects.scss */
 #projects .project-list .project .logo .wrapper svg, #projects .project-list .project .logo .wrapper img {
   height: 100%;
 }
-/* line 149, ../sass/_projects.scss */
+/* line 135, ../sass/_projects.scss */
 #projects .project-list .project .logo .close {
   display: block;
   position: absolute;
@@ -532,13 +578,13 @@ body {
   height: 100px;
   cursor: pointer;
 }
-/* line 158, ../sass/_projects.scss */
+/* line 144, ../sass/_projects.scss */
 #projects .project-list .project .logo .close span {
   position: absolute;
   top: 50px;
   left: 50px;
 }
-/* line 163, ../sass/_projects.scss */
+/* line 149, ../sass/_projects.scss */
 #projects .project-list .project .logo .close span:before, #projects .project-list .project .logo .close span:after {
   content: "";
   display: block;
@@ -549,43 +595,43 @@ body {
   background-color: #E6E6E6;
   transition: width 0.5s;
 }
-/* line 174, ../sass/_projects.scss */
+/* line 160, ../sass/_projects.scss */
 #projects .project-list .project .logo .close span:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 179, ../sass/_projects.scss */
+/* line 165, ../sass/_projects.scss */
 #projects .project-list .project .logo .close span:after {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 187, ../sass/_projects.scss */
+/* line 173, ../sass/_projects.scss */
 #projects .project-list .project .logo .close:hover span:before, #projects .project-list .project .logo .close:hover span:after {
   width: 65px;
 }
-/* line 194, ../sass/_projects.scss */
+/* line 180, ../sass/_projects.scss */
 #projects .project-list .project .info, #projects .project-list .project .image {
   width: calc(50% - 20px);
   display: inline-block;
   vertical-align: top;
   font-size: 1rem;
 }
-/* line 201, ../sass/_projects.scss */
+/* line 187, ../sass/_projects.scss */
 #projects .project-list .project .info {
   margin-right: 20px;
   line-height: 1.4rem;
 }
-/* line 206, ../sass/_projects.scss */
+/* line 192, ../sass/_projects.scss */
 #projects .project-list .project .image {
   margin-left: 20px;
 }
-/* line 209, ../sass/_projects.scss */
+/* line 195, ../sass/_projects.scss */
 #projects .project-list .project .image .images {
   width: 100%;
   height: calc(100vh - 310px);
   position: relative;
 }
-/* line 214, ../sass/_projects.scss */
+/* line 200, ../sass/_projects.scss */
 #projects .project-list .project .image .images img {
   max-width: 100%;
   max-height: 100%;
@@ -595,49 +641,99 @@ body {
   opacity: 0;
   transition: opacity 0.75s ease-in-out;
 }
-/* line 223, ../sass/_projects.scss */
+/* line 209, ../sass/_projects.scss */
 #projects .project-list .project .image .images img.active {
   opacity: 1;
 }
-/* line 229, ../sass/_projects.scss */
+/* line 215, ../sass/_projects.scss */
 #projects .project-list .project .image .designed-by {
   width: 100%;
   overflow: hidden;
 }
-/* line 233, ../sass/_projects.scss */
+/* line 219, ../sass/_projects.scss */
 #projects .project-list .project .image .designed-by a {
   display: inline-block;
   float: right;
   margin-top: 20px;
   font-weight: 600;
 }
-/* line 239, ../sass/_projects.scss */
+/* line 225, ../sass/_projects.scss */
 #projects .project-list .project .image .designed-by a .red {
   color: #F92772;
 }
-/* line 243, ../sass/_projects.scss */
+/* line 229, ../sass/_projects.scss */
 #projects .project-list .project .image .designed-by a .white {
   color: #E6E6E6;
 }
-/* line 249, ../sass/_projects.scss */
+/* line 235, ../sass/_projects.scss */
 #projects .project-list .project .image .designed-by a:hover * {
   color: #E6E6E6;
 }
-/* line 253, ../sass/_projects.scss */
+/* line 239, ../sass/_projects.scss */
 #projects .project-list .project .image .designed-by a:hover .red {
   background-color: #F92772;
 }
-/* line 257, ../sass/_projects.scss */
+/* line 243, ../sass/_projects.scss */
 #projects .project-list .project .image .designed-by a:hover .white {
   background-color: #E6E6E6;
   color: #272822;
 }
-/* line 266, ../sass/_projects.scss */
+/* line 252, ../sass/_projects.scss */
 #projects .project-list .project.active {
   z-index: 1;
 }
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3), screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2), screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3), screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3), screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
-  /* line 276, ../sass/_projects.scss */
+  /* line 260, ../sass/_projects.scss */
+  #projects .project-list {
+    margin: 100px 0;
+    background-color: #E6E6E6;
+  }
+  /* line 264, ../sass/_projects.scss */
+  #projects .project-list .project-header {
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-align: right;
+    margin-right: 10vw;
+  }
+  /* line 270, ../sass/_projects.scss */
+  #projects .project-list .project-header span {
+    display: block;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    font-weight: 400;
+  }
+  /* line 280, ../sass/_projects.scss */
+  #projects .project-list .project-panel-outer .project-panel-inner {
+    position: static;
+    -webkit-transform: none;
+    transform: none;
+  }
+  /* line 285, ../sass/_projects.scss */
+  #projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper {
+    width: 80vw;
+    height: 80vw;
+    margin: 10vw;
+  }
+  /* line 290, ../sass/_projects.scss */
+  #projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper svg, #projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper img {
+    opacity: 1;
+  }
+  /* line 294, ../sass/_projects.scss */
+  #projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper:hover {
+    width: 80vw;
+    height: 80vw;
+  }
+  /* line 298, ../sass/_projects.scss */
+  #projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper:hover svg {
+    -webkit-transform: none;
+    transform: none;
+  }
+  /* line 303, ../sass/_projects.scss */
+  #projects .project-list .project-panel-outer .project-panel-inner .logo-wrapper:hover img {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  /* line 312, ../sass/_projects.scss */
   #projects .project-list .project {
     display: none;
   }

@@ -1,3 +1,4 @@
+<?php $color = "white"; include("background-text.php"); ?>
 <div class="container">
 	<div class="image">
 		<img src="/images/pic.jpg">

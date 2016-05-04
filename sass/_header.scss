@@ -62,6 +62,35 @@
 					height: 3px !important;
 				}
 			}
+
+			svg {
+				position: relative;
+				top: 17px;
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+				
+				*:not(circle) {
+					fill: $black;
+					transition: fill 0.1s ease-in-out;
+				}
+
+				circle {
+					fill: $white;
+					transition: fill 0.1s ease-in-out;
+				}
+
+				&:hover {
+
+					*:not(circle) {
+						fill: $white;
+					}
+
+					circle {
+						fill: $black;
+					}
+				}
+			}
 		}
 
 		&.active {
