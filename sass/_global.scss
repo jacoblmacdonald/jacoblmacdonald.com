@@ -6,11 +6,11 @@ body {
 $panels: 4;
 .panel {
 	position: fixed;
-	top: 100%;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	transition: top 0.5s ease-in-out;
+	transform: translateY(100vh);
+	transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 
 	@for $i from 0 through $panels {
 		&[data-page="#{$i}"] {
@@ -19,7 +19,11 @@ $panels: 4;
 	}
 
 	&.top {
-		top: 0;
+		transform: none;
+	}
+
+	@include media(4) {
+		transform: none;
 	}
 }
 
@@ -34,6 +38,7 @@ $panels: 4;
 	font-size: 1rem;
 	z-index: 100;
 	pointer-events: none;
+	transition: opacity 0.3s ease-in-out;
 
 	&.b0 {
 		margin-right: 20px;
@@ -50,5 +55,9 @@ $panels: 4;
 
 	&.white {
 		color: $white;
+	}
+
+	&.hidden {
+		opacity: 0;
 	}
 }

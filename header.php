@@ -4,7 +4,7 @@
 		<p><span class="page-select" data-page=1><span class="mobile">#</span>about</span><span class="page-select-border desktop"></span></p>
 		<p><span class="page-select" data-page=2><span class="mobile">#</span>projects</span><span class="page-select-border desktop"></span></p>
 		<p><span class="page-select" data-page=3><span class="mobile">#</span>contact</span><span class="page-select-border desktop"></span></p>
-		<p><a href="http://github.com/jacoblmacdonald" target="_blank"><?= load_svg("github_logo.svg"); ?></a></p>
+		<p class="desktop"><a href="http://github.com/jacoblmacdonald" target="_blank"><?= load_svg("github_logo.svg"); ?></a></p>
 		<p class="mobile">}</p>
 	</div>
 	<div class="hamburger mobile"><span></span></div>

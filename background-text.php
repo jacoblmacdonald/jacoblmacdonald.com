@@ -14,7 +14,7 @@
 		$file = fopen($file_name, "r");
 		if($file) {
 			$html = fread($file, filesize($file_name));
-			echo "<pre class='background-text b" . $i . (isset($color) ? " " . $color : "") . "'>" . htmlspecialchars(trim($html)) . "</pre>";
+			echo "<pre class='desktop background-text b" . $i . (isset($color) ? " " . $color : "") . "'>" . htmlspecialchars(trim($html)) . "</pre>";
 		}
 		array_splice($files, $index, 1);
 	}

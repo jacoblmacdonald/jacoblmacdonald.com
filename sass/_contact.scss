@@ -63,11 +63,16 @@
 					height: 100%;
 					position: relative;
 					top: -2px;
+					transition: transform 0.3s ease-in-out;
 
 					* {
 						fill: $white;
 					}
 				}
+			}
+
+			&:hover svg {
+				transform: scale(1.3);
 			}
 		}
 
@@ -170,6 +175,26 @@
 
 					* {
 						fill: $white;
+					}
+				}
+			}
+
+			.github-icon {
+				width: 50px;
+				height: 50px;
+				position: relative;
+				top: -2px;
+
+				svg {
+					width: 100%;
+					height: 100%;
+
+					*:not(circle) {
+						fill: $white;
+					}
+
+					circle {
+						fill: $black;
 					}
 				}
 			}

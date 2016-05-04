@@ -15,10 +15,10 @@
 			font-size: 1rem;
 			vertical-align: top;
 			position: relative;
-			top: 0;
 			background-color: $white;
 			z-index: 2;
-			transition: top 0.5s ease-in-out;
+			transform: none;
+			transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 
 			.project-panel-inner {
 				display: inline-block;
@@ -38,7 +38,9 @@
 					background-color: $black;
 					overflow: hidden;
 					cursor: pointer;
-					transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+					transform: none;
+					transition: transform 0.3s ease-in-out;
+					//transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 					border-radius: 100%;
 
 					svg, img {
@@ -63,8 +65,9 @@
 					}
 
 					&:hover {
-						width: 275px;
-						height: 275px;
+						//width: 275px;
+						//height: 275px;
+						transform: scale(1.1);
 
 						svg {
 							-webkit-transform: scale(1.1);
@@ -96,11 +99,11 @@
 			&.active {
 
 				&.top {
-					top: -100%;
+					transform: translateY(-100%);
 				}
 
 				&.bottom {
-					top: 100%;
+					transform: translateY(100%);
 				}
 			}
 		}
@@ -152,26 +155,29 @@
 							position: relative;
 							left: -50%;
 							width: 50px;
-							height: 1px;
+							height: 3px;
 							background-color: $white;
-							transition: width 0.5s;
+							transform: none;
+							transition: transform 0.5s ease-in-out;
 						}
 
 						&:before {
 							-webkit-transform: rotate(45deg);
 							transform: rotate(45deg);
+							top: 1px;
 						}
 						
 						&:after {
 							-webkit-transform: rotate(-45deg);
 							transform: rotate(-45deg);
+							bottom: 1px;
 						}
 					}
 
 					&:hover span {
 
 						&:before, &:after {
-							width: 65px;
+							transform: scale(1.3);
 						}
 					}
 				}

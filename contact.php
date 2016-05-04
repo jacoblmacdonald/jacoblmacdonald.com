@@ -21,6 +21,7 @@
 </form>
 <p class="confirm mobile">
 	<br><span>Send<span class="contact-icon"><?= load_svg("/icons/mail.svg"); ?></span>to<br><span class="contact-email">jacob@jacoblmacdonald.com</span>
+	<br><br><a href="http://github.com/jacoblmacdonald" target="_blank">Or visit my Github <span class="github-icon"><?= load_svg("github_logo.svg"); ?></span></a>
 </p>
 <div id="email-form-success">
 	<p>Thank you! I'll be in touch.</p>

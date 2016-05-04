@@ -49,11 +49,13 @@ if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 				});
 				$(".img-load", $el).remove();
 			}
+			$("#projects .background-text").addClass("hidden");
 		});
 
 		$(".project .close").click(function() {
 			$(".project-panel-outer").removeClass("active");
 			$(".project .images").removeClass("active");
+			$("#projects .background-text").removeClass("hidden");
 		});
 
 		setInterval(function() {
@@ -160,12 +162,13 @@ if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 	}
 }
 else {
+	var t;
 	$(window).load(function() {
 		$(".mobile").removeClass("mobile");
 
 		//Header
 		setTimeout(expandLogo, 250);
-		setTimeout(contractLogo, 2000);
+		setTimeout(function() { if(!$(".header-items").hasClass("active")) { contractLogo(); } }, 2000);
 
 		$(".hamburger:not(.animating)").click(function() {
 			if($(this).hasClass("rotate")) {
@@ -191,7 +194,7 @@ else {
 	});
 
 	var contractLogo = function() {
-		$(".logo-expand").stop().animate({ "width" : "27px" });
+		$(".logo-expand").stop().animate({ "width" : "38px" });
 	}
 
 	var menuAnimationTime = 600;
@@ -225,7 +228,7 @@ else {
 	}
 
 	var goToAnchor = function($page) {
-		$("html, body").animate({ "scrollTop" : $(".panel[data-page=" + $page + "]").offset().top + 90 + "px" }, menuAnimationTime);
+		$("html, body").animate({ "scrollTop" : $(".panel[data-page=" + $page + "]").offset().top - $("#header").height() + "px" }, menuAnimationTime);
 	}
 }
 

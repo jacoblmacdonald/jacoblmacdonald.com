@@ -69,7 +69,7 @@
 				width: 50px;
 				height: 50px;
 				cursor: pointer;
-				
+
 				*:not(circle) {
 					fill: $black;
 					transition: fill 0.1s ease-in-out;
@@ -106,16 +106,16 @@
 	
 #bracket {
 	position: fixed;
-	top: calc(100% - 70px);
 	right: 0;
 	width: 50px;
 	height: 50px;
 	font-size: 2rem;
 	line-height: 50px;
 	z-index: 102;
-	transition: top 0.25s ease-in-out;
+	transform: translateY(calc(100vh - 70px));
+	transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 
 	&.top {
-		top: 20px;
+		transform: translateY(20px);
 	}
 }
