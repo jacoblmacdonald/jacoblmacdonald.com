@@ -8,6 +8,7 @@ $panels: 4;
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
+	min-width: 1000px;
 	overflow: hidden;
 	transform: translateY(100vh);
 	transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1.000);
@@ -24,6 +25,7 @@ $panels: 4;
 
 	@include media(4) {
 		transform: none;
+		min-width: 0;
 	}
 }
 

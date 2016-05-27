@@ -2,7 +2,7 @@
 <div class="project-list">
 	<p class="project-header mobile">Projects<span>Click to visit site</span></p>
 	<div class="project-panel-outer top">
-		<div class="project-panel-inner">
+		<div class="project-panel-inner" style="width:<?= 240 * ceil(count($projects) / 2); ?>px;">
 		<?php for($i = 0; $i < ceil(count($projects) / 2); $i++) { ?>
 			<div class="logo-wrapper" data-index=<?= $i; ?> data-url=<?= $projects[$i]->link; ?>>
 				<?php echo $projects[$i]->get_logo(); ?>
@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div class="project-panel-outer bottom">
-		<div class="project-panel-inner">
+		<div class="project-panel-inner" style="width:<?= 240 * floor(count($projects) / 2); ?>px;">
 		<?php for($i = ceil(count($projects) / 2); $i < count($projects); $i++) { ?>
 			<div class="logo-wrapper" data-index=<?= $i; ?> data-url=<?= $projects[$i]->link; ?>>
 				<?php echo $projects[$i]->get_logo(); ?>

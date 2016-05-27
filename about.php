@@ -26,10 +26,11 @@
 				<span><span class="desktop">&bull;&nbsp;</span>Javascript/JQuery<span class="mobile">&nbsp;&bull;</span></span><br>
 				<span><span class="desktop">&bull;&nbsp;</span>PHP<span class="mobile">&nbsp;&bull;</span></span><br>
 				<span><span class="desktop">&bull;&nbsp;</span>MySQL<span class="mobile">&nbsp;&bull;</span></span><br>
+				<span><span class="desktop">&bull;&nbsp;</span>MongoDB<span class="mobile">&nbsp;&bull;</span></span><br>
 				<span><span class="desktop">&bull;&nbsp;</span>Wordpress<span class="mobile">&nbsp;&bull;</span></span><br>
 				<span><span class="desktop">&bull;&nbsp;</span>iOS/Swift<span class="mobile">&nbsp;&bull;</span></span><br>
 				<span><span class="desktop">&bull;&nbsp;</span>Android/Java<span class="mobile">&nbsp;&bull;</span></span><br>
-				<span><span class="desktop">&bull;&nbsp;</span>C++/OpenGL<span class="mobile">&nbsp;&bull;</span></span><br>
+				<span><span class="desktop">&bull;&nbsp;</span>C/C++/OpenGL<span class="mobile">&nbsp;&bull;</span></span><br>
 				<span><span class="desktop">&bull;&nbsp;</span>C#<span class="mobile">&nbsp;&bull;</span></span>
 			</section>
 		</div>

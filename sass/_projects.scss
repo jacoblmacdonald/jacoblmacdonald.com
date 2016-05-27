@@ -27,6 +27,7 @@
 				-webkit-transform: translate(-50%, 0);
 				transform: translate(-50%, 0);
 				background-color: $white;
+				font-size: 0;
 
 				.logo-wrapper {
 					display: inline-block;
@@ -50,8 +51,12 @@
 					}
 
 					svg {
-						width: 80%;
+						width: 70%;
 						height: 100%;
+
+						* {
+							fill: $white;
+						}
 					}
 
 					img {
@@ -60,8 +65,8 @@
 						top: 50%;
 						-webkit-transform: translate(-50%, -50%);
 						transform: translate(-50%, -50%);
-						max-width: 80%;
-						max-height: 80%;
+						max-width: 70%;
+						max-height: 70%;
 					}
 
 					&:hover {
@@ -132,6 +137,10 @@
 
 					svg, img {
 						height: 100%;
+					}
+
+					svg * {
+						fill: $white;
 					}
 				}
 

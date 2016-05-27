@@ -105,6 +105,20 @@
 			"Britt Cobb",
 			"//www.brittcobb.com",
 			"white"
+		),
+		new Project("22bond_logo.svg",
+			"
+				The teaser site for a new housing project in %SoHo%. More to follow.
+				<br><br>
+				%Frontend:% Jacob Macdonald, Rafael De Los Santos<br>
+				%Backend:% Andrew Mbiam
+			",
+			array("22bond_1.png", "22bond_2.png"),
+			"//www.22bond.com",
+			"#CFB43E",
+			"Pentagram",
+			"//www.pentagram.com",
+			"red"
 		)
 	];
 ?>
