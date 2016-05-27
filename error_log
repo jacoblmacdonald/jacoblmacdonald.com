@@ -481,3 +481,4 @@
 [03-May-2016 21:43:47 America/Denver] PHP Warning:  fopen(sass/_intro.php): failed to open stream: No such file or directory in /home2/jacoblma/public_html/dev/background-text.php on line 15
 [03-May-2016 22:06:38 America/Denver] PHP Warning:  file_get_contents(http://dev.jacoblmacdonald.com/images/github_logo): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
  in /home2/jacoblma/public_html/dev/boilerplate.php on line 3
+[21-May-2016 15:57:22 America/Denver] PHP Fatal error:  Call to undefined function get_bloginfo() in /home2/jacoblma/public_html/dev/test.php on line 9

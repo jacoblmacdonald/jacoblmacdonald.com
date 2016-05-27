@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html itemscope itemtype="https://schema.org/WebSite">
 <head>
+	<meta itemprop="name" content="Jacob Macdonald">
+	<meta itemprop="image" content="/images/pic.jpg">
 	<link rel="icon" href="/images/favicon.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
 	<link rel="stylesheet" href="stylesheets/style.css">
