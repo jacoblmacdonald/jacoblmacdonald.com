@@ -117,10 +117,10 @@
 	font-size: 2rem;
 	line-height: 50px;
 	z-index: 102;
-	transform: translateY(calc(100vh - 70px));
-	transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	@include transform(translateY(calc(100vh - 70px)));
+	@include transition(transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000));
 
 	&.top {
-		transform: translateY(20px);
+		@include transform(translateY(20px));
 	}
 }

@@ -10,21 +10,21 @@ $panels: 4;
 	height: 100vh;
 	min-width: 1000px;
 	overflow: hidden;
-	transform: translateY(100vh);
-	transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	@include transform(translateY(100%));
+	@include transition(transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1.000));
 
-	@for $i from 0 through $panels {
+	@for $i from 0 through $panels - 1 {
 		&[data-page="#{$i}"] {
 			z-index: $i;
 		}
 	}
 
 	&.top {
-		transform: none;
+		@include transform(none);
 	}
 
 	@include media(4) {
-		transform: none;
+		@include transform(none);
 		min-width: 0;
 	}
 }
@@ -40,7 +40,7 @@ $panels: 4;
 	font-size: 1rem;
 	z-index: 100;
 	pointer-events: none;
-	transition: opacity 0.3s ease-in-out;
+	@include transition(opacity 0.3s ease-in-out);
 
 	&.b0 {
 		margin-right: 20px;

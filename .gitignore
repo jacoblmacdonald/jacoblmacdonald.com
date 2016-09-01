@@ -2,3 +2,6 @@
 .DS_Store
 .sass-cache
 error_log
+mapbox/
+say-hi/
+

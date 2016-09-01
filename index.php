@@ -7,10 +7,14 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
 	<link rel="stylesheet" href="stylesheets/style.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
+	<script src="js/unsupported.js"></script>
+	<script src="js/contentful.js"></script>
 	<script src="js/global.js"></script>
 </head>
 <body data-page=0>
 	<?php include("boilerplate.php"); ga(); e(); ?>
+	<?php include("unsupported.php"); ?>
 	<?php include("header.php"); ?>
 	<div id="intro" class="panel top" data-page=0>
 		<?php include("intro.php"); ?>

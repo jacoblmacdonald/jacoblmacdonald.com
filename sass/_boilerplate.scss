@@ -29,10 +29,38 @@
 }
 
 @mixin keyframes($name) {
-	@-webkit-keyframes #{$name} { @content; }
+	@-o-keyframes #{$name} { @content; }
 	@-moz-keyframes #{$name} { @content; }
 	@-ms-keyframes #{$name} { @content; }
+	@-webkit-keyframes #{$name} { @content; }
 	@keyframes #{$name} { @content; }
+}
+
+$all-prefixes: "-o-", "-moz-", "-ms-", "-webkit-", "";
+
+@mixin prefix($property, $value, $prefixes: $all-prefixes) {
+	@if(type-of($value) == arglist) {
+		$stringValue: "";
+		@each $v in $value {
+			$stringValue: if($stringValue == "", $v, $stringValue + ", " + $v);
+		}
+		$value: $stringValue;
+	}
+	@each $prefix in $prefixes {
+		#{$prefix}#{$property}: #{if(str-index(inspect($value), "transform") != null, $prefix, "")}#{$value};
+	}
+}
+
+@mixin transform($value) {
+	@include prefix("transform", $value);
+}
+
+@mixin transform-origin($value) {
+	@include prefix("transform-origin", $value);
+}
+
+@mixin transition($value...) {
+	@include prefix("transition", $value, ("-o-", "-moz-", "-webkit-", ""));
 }
 
 * {
@@ -43,7 +71,7 @@ html {
 	font-size: 16px;
 }
 
-p, label, pre {
+p, label, pre, noscript {
 	font-family: "Menlo", "Lucida Console", monospace;
 	//font-family: "museo-nova";
 }
